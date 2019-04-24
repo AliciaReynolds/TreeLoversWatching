@@ -1,0 +1,60 @@
+﻿@page
+@model TreeLoversWatching.Pages.Tree.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Trees[0].TreeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trees[0].Latin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trees[0].TreeType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trees[0].Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trees[0].Category)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Trees) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TreeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Latin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TreeType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

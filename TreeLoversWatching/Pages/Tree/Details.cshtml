@@ -1,0 +1,49 @@
+﻿@page
+@model TreeLoversWatching.Pages.Tree.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Trees</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Trees.TreeName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Trees.TreeName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Trees.Latin)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Trees.Latin)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Trees.TreeType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Trees.TreeType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Trees.Location)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Trees.Location)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Trees.Category)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Trees.Category)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Trees.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

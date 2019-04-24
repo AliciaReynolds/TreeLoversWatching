@@ -12,5 +12,7 @@ namespace TreeLoversWatching.Data
             : base(options)
         {
         }
+
+        public DbSet<TreeLoversWatching.Models.Trees> Trees { get; set; }
     }
 }
