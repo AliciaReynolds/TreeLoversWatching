@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using NetTopologySuite.Geometries;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,11 @@ namespace TreeLoversWatching.Models
                         Latin = "Polylepis tomentella",
                         TreeType = "Medium-sized evergreen tree",
                         Location = "Central Andes, Altiplano",
-                        Category = "High Altitude Trees"
+                        Category = "High Altitude Trees",
+                        //GeoLocation = new Point(16.3738, 48.2082)
+                        //{
+                        //    SRID = 4326
+                        //}
 
                     },
 
@@ -38,7 +43,11 @@ namespace TreeLoversWatching.Models
                         Latin = "Lagarostrobos franklinii",
                         TreeType = "Conifer, Colony forming",
                         Location = "West coast of Tasmania, Australia",
-                        Category = "Oldest Trees"
+                        Category = "Oldest Trees",
+                        GeoLocation = new Point(-43.0953431, 146.637289)
+                        {
+                            SRID = 4326
+                        }
 
                     },
 

@@ -1,8 +1,10 @@
-﻿using System;
+﻿using NetTopologySuite.Geometries;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+
 
 namespace TreeLoversWatching.Models
 {
@@ -24,5 +26,9 @@ namespace TreeLoversWatching.Models
 
         [Display(Name = "Tree Category")]
         public string Category { get; set; }
+
+
+        public Point GeoLocation { get; set; }
+ 
     }
 }

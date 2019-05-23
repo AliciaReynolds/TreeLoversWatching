@@ -4,6 +4,62 @@
     ViewData["Title"] = "Home page";
 }
 
+<script>
+    // Initialize and add the map
+    function initMap() {
+        // The location of Uluru
+        var uluru = { lat: -25.344, lng: 131.036 };
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+            document.getElementById('map'), { zoom: 4, center: uluru });
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({ position: uluru, map: map });
+        var contentString = '<div id="content">' +
+            '<div id="siteNotice">' +
+            '</div>' +
+            '<h1 id="firstHeading" class="firstHeading">Uluru</h1>' +
+            '<div id="bodyContent">' +
+            '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+            'sandstone rock formation in the southern part of the ' +
+            'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) ' +
+            'south west of the nearest large town, Alice Springs; 450&#160;km ' +
+            '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major ' +
+            'features of the Uluru - Kata Tjuta National Park. Uluru is ' +
+            'sacred to the Pitjantjatjara and Yankunytjatjara, the ' +
+            'Aboriginal people of the area. It has many springs, waterholes, ' +
+            'rock caves and ancient paintings. Uluru is listed as a World ' +
+            'Heritage Site.</p>' +
+            '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
+            'https://en.wikipedia.org/w/index.php?title=Uluru</a> ' +
+            '(last visited June 22, 2009).</p>' +
+            '</div>' +
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+
+        var marker = new google.maps.Marker({
+            position: uluru,
+            map: map,
+            title: 'Uluru (Ayers Rock)'
+        });
+        marker.addListener('click', function () {
+            infowindow.open(map, marker);
+        });
+    
+    }
+</script>
+
+<style>
+    /* Set the size of the div element that contains the map */
+    #map {
+        height: 400px; /* The height is 400 pixels */
+        width: 100%; /* The width is the width of the web page */
+    }
+</style>
+ 
+
 <!-- //banner -->
 <!-- about -->
 <section class="about py-lg-4 py-md-3 py-sm-3 py-3" id="about">
@@ -30,7 +86,7 @@
                 <div class="about-right-grid">
                     <h6 class="title-top-txt mb-2">About Us</h6>
                     <h5 class="mb-3">We believe that trees are some of the most unique species on this living planet</h5>
-                    <p>Trees have been growing on this planet for 370 million years. Over that span of time, they have evolved into a key player to the vitality of this planet but are often underappreciate for both their wonder and splendor. We've compiled a list of some of the most unique trees around the globe. Through this interactive webpage you can discover the oldest tree in the world, some of the most unique shaped, and extinct trees brought back to life among others. We provide maps so you can plan your travels around where they are located. Create your own wish list to keep track of those that you want to discover.</p>
+                    <p>Trees have been growing on this planet for 370 million years. Over that span of time, they have evolved into a key player to the vitality of this planet but are often under appreciate for both their wonder and splendor. We've compiled a list of some of the most unique trees around the globe. Through this interactive webpage you can discover the oldest tree in the world, some of the most unique shaped, and extinct trees brought back to life among others. We provide maps so you can plan your travels around where they are located. Create your own wish list to keep track of those that you want to discover.</p>
                 </div>
                 @*<div class="row mt-lg-4 mt-md-3 mt-3 text-center">
                     <div class="col-md-4 col-sm-4 percentage-grid">
@@ -70,12 +126,12 @@
                                 <span class="progress-bar"></span>
                             </span>
                             <div class="progress-value">75%</div>*@
-                        @*</div>
-                        <div class="about-progress-wthree">
-                            <h4>Save Trees</h4>
+                @*</div>
+                            <div class="about-progress-wthree">
+                                <h4>Save Trees</h4>
+                            </div>
                         </div>
-                    </div>
-                </div>*@
+                    </div>*@
             </div>
         </div>
     </div>
@@ -173,62 +229,63 @@
         <div class="title-tag mb-lg-5 mb-md-4 mb-sm-4 mb-3 pb-lg-3 pb-md-2">
             <div class="row">
                 <div class="col-lg-6 col-md-6 txt-rightside">
-                    <h6 class="title-top-txt mb-2">See our work</h6>
+                    <h6 class="title-top-txt mb-2">See our passion</h6>
                     <h3 class="title">Our gallery</h3>
                 </div>
                 <div class="title-wls-text col-lg-6 col-md-6 ">
-                    <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+                    <p class="">Trees are what fill this world with oxygen. You can see the special trees below.</p>
                 </div>
             </div>
         </div>
         <div class="row gallery-info">
             <div class="col-lg-6 col-md-6 col-sm-6 gallery-img-grid">
                 <div class="gallery-grids mb-lg-4 mb-3">
-                    <a href="#gal1"><img src="images/g1.jpg" alt="news image" class="img-fluid"></a>
+                    <a href="#gal1"><img src="~/images/general_sherman.jpg" alt="news image" class="img-fluid"></a>
                 </div>
                 <div class="row mb-lg-4 mb-3">
                     <div class="col-lg-6 col-md-6">
                         <div class="gallery-grids">
-                            <a href="#gal2"><img src="images/g2.jpg" alt="news image" class="img-fluid"></a>
+                            <a href="#gal2"><img src="~/images/Basket-Tree-strangest-trees.jpg" alt="news image" class="img-fluid"></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="gallery-grids">
-                            <a href="#gal3"><img src="images/g3.jpg" alt="news image" class="img-fluid"></a>
+                            <a href="#gal3"><img src="~/images/Silk-Cotton-Trees-Cambodia.jpg" alt="news image" class="img-fluid"></a>
                         </div>
                     </div>
                 </div>
                 <div class="gallery-grids">
-                    <a href="#gal7"><img src="images/g7.jpg" alt="news image" class="img-fluid"></a>
+                    <a href="#gal7"><img src="~/images/dragon blood tree.jpg" alt="news image" class="img-fluid"></a>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 gallery-img-grid">
                 <div class="row mb-lg-4 mb-3">
+
                     <div class="col-lg-6 col-md-6">
                         <div class="gallery-grids">
-                            <a href="#gal8"><img src="images/g4.jpg" alt="news image" class="img-fluid"></a>
+                            <a href="#gal8"><img src="~/images/El-Arbol-de-la-Sabina-unusual-and-strange-trees.jpg" alt="news image" class="img-fluid"></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="gallery-grids">
-                            <a href="#t3"><img src="images/t3.jpg" alt="news image" class="img-fluid"></a>
+                            <a href="#t3"><img src="~/images/tree of life.jpg" alt="news image" class="img-fluid"></a>
                         </div>
                     </div>
                 </div>
                 <div class="row mb-lg-4 mb-3">
                     <div class="col-lg-6 col-md-6">
                         <div class="gallery-grids">
-                            <a href="#gal4"><img src="images/g4.jpg" alt="news image" class="img-fluid"></a>
+                            <a href="#gal4"><img src="~/images/teapot_baobab.jpg" alt="news image" class="img-fluid"></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="gallery-grids">
-                            <a href="#gal5"><img src="images/g5.jpg" alt="news image" class="img-fluid"></a>
+                            <a href="#gal5"><img src="~/images/crooked.jpg" alt="news image" class="img-fluid"></a>
                         </div>
                     </div>
                 </div>
                 <div class="gallery-grids">
-                    <a href="#gal6"><img src="images/g6.jpg" alt="news image" class="img-fluid"></a>
+                    <a href="#gal6"><img src="~/images/bottle_tree_fs.jpg" alt="news image" class="img-fluid"></a>
                 </div>
             </div>
         </div>
@@ -308,56 +365,56 @@
 <!-- //popup -->
 <!--//gallery -->
 <!-- stats -->
-<section class="stats py-lg-4 py-md-3 py-sm-3 py-3">
-    <div class="container-fluid py-lg-5 py-md-4 py-sm-4 py-3">
-        <div class="stats-info row ">
-            <div class="col-lg-3 col-md-3 col-sm-6 col-6 stats-grid ">
-                <div class="register-left-num ">
-                    <div class="count-icon">
-                        <span class="fa fa-paw" aria-hidden="true"></span>
-                    </div>
-                    <div class="counter-number">1200</div>
-                    <div class="stat-info pt-lg-3 pt-md-3 pt-sm-3 pt-3">
-                        <h4>Save</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-6 stats-grid ">
-                <div class="register-left-num">
-                    <div class="count-icon">
-                        <span class="fa fa-smile-o" aria-hidden="true"></span>
-                    </div>
-                    <div class="counter-number">2000</div>
-                    <div class="stat-info pt-lg-3 pt-md-3 pt-sm-3 pt-3">
-                        <h4>Projects</h4>
+@*<section class="stats py-lg-4 py-md-3 py-sm-3 py-3">
+        <div class="container-fluid py-lg-5 py-md-4 py-sm-4 py-3">
+            <div class="stats-info row ">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-6 stats-grid ">
+                    <div class="register-left-num ">
+                        <div class="count-icon">
+                            <span class="fa fa-paw" aria-hidden="true"></span>
+                        </div>
+                        <div class="counter-number">1200</div>
+                        <div class="stat-info pt-lg-3 pt-md-3 pt-sm-3 pt-3">
+                            <h4>Save</h4>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-6 stats-grid">
-                <div class="register-left-num">
-                    <div class="count-icon">
-                        <span class="fa fa-leaf" aria-hidden="true"></span>
-                    </div>
-                    <div class="counter-number">4000</div>
-                    <div class="stat-info pt-lg-3 pt-md-3 pt-sm-3 pt-3">
-                        <h4>Plants</h4>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-6 stats-grid ">
+                    <div class="register-left-num">
+                        <div class="count-icon">
+                            <span class="fa fa-smile-o" aria-hidden="true"></span>
+                        </div>
+                        <div class="counter-number">2000</div>
+                        <div class="stat-info pt-lg-3 pt-md-3 pt-sm-3 pt-3">
+                            <h4>Projects</h4>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-6 stats-grid">
-                <div class="register-left-num">
-                    <div class="count-icon">
-                        <span class="fa fa-globe" aria-hidden="true"></span>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-6 stats-grid">
+                    <div class="register-left-num">
+                        <div class="count-icon">
+                            <span class="fa fa-leaf" aria-hidden="true"></span>
+                        </div>
+                        <div class="counter-number">4000</div>
+                        <div class="stat-info pt-lg-3 pt-md-3 pt-sm-3 pt-3">
+                            <h4>Plants</h4>
+                        </div>
                     </div>
-                    <div class="counter-number">200</div>
-                    <div class="stat-info pt-lg-3 pt-md-3 pt-sm-3 pt-3">
-                        <h4>Countries</h4>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-6 stats-grid">
+                    <div class="register-left-num">
+                        <div class="count-icon">
+                            <span class="fa fa-globe" aria-hidden="true"></span>
+                        </div>
+                        <div class="counter-number">200</div>
+                        <div class="stat-info pt-lg-3 pt-md-3 pt-sm-3 pt-3">
+                            <h4>Countries</h4>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>*@
 <!--//stats -->
 <!--features -->
 <section class="features py-lg-4 py-md-3 py-sm-3 py-3" id="features">
@@ -365,7 +422,7 @@
         <div class="title-tag mb-lg-5 mb-md-4 mb-sm-4 mb-3 pb-lg-3 pb-md-2">
             <div class="row">
                 <div class="title-wls-text col-lg-6 col-md-6 txt-rightside">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+                    <p>Discover where to explore and see the unique trees - make lists to keep track of those that you see and want to see</p>
                 </div>
                 <div class="col-lg-6 col-md-6 ">
                     <h6 class="title-top-txt mb-2">Our hard work</h6>
@@ -416,113 +473,113 @@
     </div>
 </section>
 <!--//features-->
-<!--price -->
-<section class="price py-lg-4 py-md-3 py-sm-3 py-3" id="price">
-    <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
-        <div class="title-tag mb-lg-5 mb-md-4 mb-sm-4 mb-3 pb-lg-3 pb-md-2">
+@*<!--price -->
+    <section class="price py-lg-4 py-md-3 py-sm-3 py-3" id="price">
+        <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
+            <div class="title-tag mb-lg-5 mb-md-4 mb-sm-4 mb-3 pb-lg-3 pb-md-2">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 txt-rightside ">
+                        <h6 class="title-top-txt mb-2">Our Plans </h6>
+                        <h3 class="title clr">Our Prices</h3>
+                    </div>
+                    <div class="title-wls-text col-lg-6 col-md-6 clr-para">
+                        <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+                    </div>
+                </div>
+            </div>
             <div class="row">
-                <div class="col-lg-6 col-md-6 txt-rightside ">
-                    <h6 class="title-top-txt mb-2">Our Plans </h6>
-                    <h3 class="title clr">Our Prices</h3>
-                </div>
-                <div class="title-wls-text col-lg-6 col-md-6 clr-para">
-                    <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6 pricing-grid">
-                <div class="w3ls-bottom grid-two">
-                    <div class="table-txt-grid">
-                        <h4>GOLDEN</h4>
-                    </div>
-                    <div class="my-lg-4 my-3 price-w3layouts-table">
-                        <h4> <span class="sup">$</span><span class="number-price">50</span> / month </h4>
-                    </div>
-                    <div class="price-list-txt">
-                        <ul class="count">
-                            <li>Lorem ipsum </li>
-                            <li>Dolor sit </li>
-                            <li>Consectetuer</li>
-                            <li>Adipiscing</li>
-                            <li>Lorem ipsum </li>
-                        </ul>
-                    </div>
-                    <div class="view-buttn mt-3">
-                        <a href="#contact" class=" scroll">Book Now</a>
+                <div class="col-lg-3 col-md-6 col-sm-6 pricing-grid">
+                    <div class="w3ls-bottom grid-two">
+                        <div class="table-txt-grid">
+                            <h4>GOLDEN</h4>
+                        </div>
+                        <div class="my-lg-4 my-3 price-w3layouts-table">
+                            <h4> <span class="sup">$</span><span class="number-price">50</span> / month </h4>
+                        </div>
+                        <div class="price-list-txt">
+                            <ul class="count">
+                                <li>Lorem ipsum </li>
+                                <li>Dolor sit </li>
+                                <li>Consectetuer</li>
+                                <li>Adipiscing</li>
+                                <li>Lorem ipsum </li>
+                            </ul>
+                        </div>
+                        <div class="view-buttn mt-3">
+                            <a href="#contact" class=" scroll">Book Now</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 pricing-grid">
-                <div class="w3ls-bottom grid-two">
-                    <div class="table-txt-grid">
-                        <h4>PREMIUM</h4>
-                    </div>
-                    <div class="my-lg-4 my-3 price-w3layouts-table">
-                        <h4> <span class="sup">$</span><span class="number-price">60</span> / month </h4>
-                    </div>
-                    <div class="price-list-txt">
-                        <ul class="count">
-                            <li>Lorem ipsum </li>
-                            <li>Dolor sit </li>
-                            <li>Consectetuer</li>
-                            <li>Adipiscing</li>
-                            <li>Lorem ipsum </li>
-                        </ul>
-                    </div>
-                    <div class="view-buttn mt-3">
-                        <a href="#contact" class=" scroll">Book Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 pricing-grid">
-                <div class="w3ls-bottom grid-two">
-                    <div class="table-txt-grid">
-                        <h4>PLATINUM</h4>
-                    </div>
-                    <div class="my-lg-4 my-3 price-w3layouts-table">
-                        <h4> <span class="sup">$</span><span class="number-price">70</span> / month </h4>
-                    </div>
-                    <div class="price-list-txt">
-                        <ul class="count">
-                            <li>Lorem ipsum </li>
-                            <li>Dolor sit </li>
-                            <li>Consectetuer</li>
-                            <li>Adipiscing</li>
-                            <li>Lorem ipsum </li>
-                        </ul>
-                    </div>
-                    <div class="view-buttn mt-3">
-                        <a href="#contact" class=" scroll">Book Now</a>
+                <div class="col-lg-3 col-md-6 col-sm-6 pricing-grid">
+                    <div class="w3ls-bottom grid-two">
+                        <div class="table-txt-grid">
+                            <h4>PREMIUM</h4>
+                        </div>
+                        <div class="my-lg-4 my-3 price-w3layouts-table">
+                            <h4> <span class="sup">$</span><span class="number-price">60</span> / month </h4>
+                        </div>
+                        <div class="price-list-txt">
+                            <ul class="count">
+                                <li>Lorem ipsum </li>
+                                <li>Dolor sit </li>
+                                <li>Consectetuer</li>
+                                <li>Adipiscing</li>
+                                <li>Lorem ipsum </li>
+                            </ul>
+                        </div>
+                        <div class="view-buttn mt-3">
+                            <a href="#contact" class=" scroll">Book Now</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 pricing-grid">
-                <div class="w3ls-bottom grid-two">
-                    <div class="table-txt-grid">
-                        <h4>SILVER</h4>
+                <div class="col-lg-3 col-md-6 col-sm-6 pricing-grid">
+                    <div class="w3ls-bottom grid-two">
+                        <div class="table-txt-grid">
+                            <h4>PLATINUM</h4>
+                        </div>
+                        <div class="my-lg-4 my-3 price-w3layouts-table">
+                            <h4> <span class="sup">$</span><span class="number-price">70</span> / month </h4>
+                        </div>
+                        <div class="price-list-txt">
+                            <ul class="count">
+                                <li>Lorem ipsum </li>
+                                <li>Dolor sit </li>
+                                <li>Consectetuer</li>
+                                <li>Adipiscing</li>
+                                <li>Lorem ipsum </li>
+                            </ul>
+                        </div>
+                        <div class="view-buttn mt-3">
+                            <a href="#contact" class=" scroll">Book Now</a>
+                        </div>
                     </div>
-                    <div class="my-lg-4 my-3 price-w3layouts-table">
-                        <h4> <span class="sup">$</span><span class="number-price">80</span> / month </h4>
-                    </div>
-                    <div class="price-list-txt">
-                        <ul class="count">
-                            <li>Lorem ipsum </li>
-                            <li>Dolor sit </li>
-                            <li>Consectetuer</li>
-                            <li>Adipiscing</li>
-                            <li>Lorem ipsum </li>
-                        </ul>
-                    </div>
-                    <div class="view-buttn mt-3">
-                        <a href="#contact" class=" scroll">Book Now</a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 pricing-grid">
+                    <div class="w3ls-bottom grid-two">
+                        <div class="table-txt-grid">
+                            <h4>SILVER</h4>
+                        </div>
+                        <div class="my-lg-4 my-3 price-w3layouts-table">
+                            <h4> <span class="sup">$</span><span class="number-price">80</span> / month </h4>
+                        </div>
+                        <div class="price-list-txt">
+                            <ul class="count">
+                                <li>Lorem ipsum </li>
+                                <li>Dolor sit </li>
+                                <li>Consectetuer</li>
+                                <li>Adipiscing</li>
+                                <li>Lorem ipsum </li>
+                            </ul>
+                        </div>
+                        <div class="view-buttn mt-3">
+                            <a href="#contact" class=" scroll">Book Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!--//price-->
+    </section>
+    <!--//price-->*@
 <!-- clients -->
 <section class="clients py-lg-4 py-md-3 py-sm-3 py-3" id="clients">
     <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
@@ -844,5 +901,11 @@
 </section>
 <!--//contact -->
 <div class="address-map-w3layouts ">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3539.812628729253!2d153.014155!3d-27.4750921!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b915a0835840a2f%3A0xdd5e3f5c208dc0e1!2sMelbourne+St%2C+South+Brisbane+QLD+4101%2C+Australia!5e0!3m2!1sen!2sin!4v1492257477691"></iframe>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsr_EyQZYZviMXFl5fcpvcE_6cAoF_H24&callback=initMap"
+            type="text/javascript"></script>
+    <div id="map"></div>
+
+    @*<iframe src="https://www.google.com/maps/embed?pb=AIzaSyAsr_EyQZYZviMXFl5fcpvcE_6cAoF_H24"></iframe>*@
 </div>
+
+
