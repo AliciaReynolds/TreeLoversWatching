@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using TreeLoversWatching.Data;
 using TreeLoversWatching.Models;
+using NetTopologySuite;
 using Microsoft.EntityFrameworkCore;
 
 namespace TreeLoversWatching

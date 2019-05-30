@@ -27,7 +27,6 @@ namespace TreeLoversWatching.Models
         [Display(Name = "Tree Category")]
         public string Category { get; set; }
 
-
         public Point GeoLocation { get; set; }
  
     }
